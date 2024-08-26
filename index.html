@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Recommender</title>
+</head>
+<body>
+    <h1>Emotion-Based Recommender</h1>
+    <form action="/search" method="post">
+        <label for="choice">Choose an option:</label>
+        <select name="choice" id="choice">
+            <option value="1">Play a track on Spotify</option>
+            <option value="2">Get movie recommendations based on emotion</option>
+            <option value="3">Search for books based on emotion</option>
+        </select>
+        <br><br>
+        <div id="input-fields">
+            <label for="query">Track name (if option 1 selected):</label>
+            <input type="text" id="query" name="query">
+            <br><br>
+            <label for="emotion">Emotion (if option 2 or 3 selected):</label>
+            <input type="text" id="emotion" name="emotion">
+            <br><br>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

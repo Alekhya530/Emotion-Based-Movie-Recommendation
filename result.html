@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    {% if choice == '1' %}
+        {% if result.track_url %}
+            <p>Track URL: <a href="{{ result.track_url }}" target="_blank">{{ result.track_url }}</a></p>
+        {% else %}
+            <p>{{ result.error }}</p>
+        {% endif %}
+    {% elif choice == '2' %}
+        {% if result.movies %}
+            <ul>
+                {% for movie in result.movies %}
+                    <li>{{ movie }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ result.error }}</p>
+        {% endif %}
+    {% elif choice == '3' %}
+        {% if result.books %}
+            <ul>
+                {% for book in result.books %}
+                    <li>{{ book }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ result.error }}</p>
+        {% endif %}
+    {% endif %}
+    <br>
+    <a href="/">Go back</a>
+</body>
+</html>
